@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from 'react';
+import ActiveNumber from './components/active-number';
+import CalledNumbers from './components/called-numbers';
+import Header from './components/header';
+import GameContext from './context/game-context';
+import './style.css';
 
 function App() {
+  const {resetGame} = useContext(GameContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <section className='app-section'>
+        <div className='reset'>
+          <button className='btn-reset' onClick={resetGame}>Reset Game</button>
+        </div>
+        <section className='app-body'>
+          <aside>
+            <CalledNumbers />
+          </aside>
+          <main>
+            <ActiveNumber />
+          </main>
+        </section>
+      </section>
+    </>
   );
 }
 
