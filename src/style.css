@@ -154,3 +154,20 @@ header {
     height: 20px;
     width: 20px;
 }
+
+@media screen and (max-width: 768px) {
+    .app-body {
+        flex-direction: column;
+    }
+
+    .app-body aside {
+        width: 100%;
+        border: none;
+    }
+
+    .app-body main {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+    }
+}
