@@ -6,7 +6,7 @@ import GameContext from './context/game-context';
 import './style.css';
 
 function App() {
-  const {resetGame} = useContext(GameContext);
+  const { resetGame } = useContext(GameContext);
   return (
     <>
       <Header />
@@ -22,6 +22,9 @@ function App() {
             <ActiveNumber />
           </main>
         </section>
+        <footer>
+          &#123;Developed by Rohan Pareek&#125;
+        </footer>
       </section>
     </>
   );

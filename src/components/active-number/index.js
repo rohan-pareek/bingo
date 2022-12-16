@@ -25,12 +25,14 @@ export default function ActiveNumber() {
 
     return (
         <section>
-            <button className='btn-primary' onClick={changeDisplay} disabled={availableNumbers.length === 0}>Pick New Number</button>
-            {displayNumber !== 0 && <div className='display-number'>{displayNumber}</div>}
-            {/* {availableNumbers.length === 0 && <div className='gameover'>
-                <img src='/images/gameover.gif' alt='game over' />
-            </div>} */}
-            <ul className='rules'>
+            {availableNumbers.length !== 0 && <>
+                <button className='btn-primary' onClick={changeDisplay} disabled={availableNumbers.length === 0}>Pick New Number</button>
+                {displayNumber !== 0 && <div className='display-number'>{displayNumber}</div>}
+            </>}
+            {availableNumbers.length === 0 && <div className='gameover'>
+                <img src='/images/khatam.gif' alt='game over' />
+            </div>}
+            {availableNumbers.length !== 0 && <ul className='rules'>
                 {rules.map(rule => (
                     <li>
                         <input
@@ -41,7 +43,7 @@ export default function ActiveNumber() {
                         <label htmlFor={rule.name}>{rule.done ? <s>{rule.name}</s> : <>{rule.name}</>}</label>
                     </li>
                 ))}
-            </ul>
+            </ul>}
         </section>
     )
 }
